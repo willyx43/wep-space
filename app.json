@@ -1,0 +1,13 @@
+{
+  "expo": {
+    "plugins": [
+      "@react-native-mapbox-gl/maps"
+    ],
+    "android": {
+      "package": "com.willy43.wepspace"
+    },
+    "ios": {
+      "bundleIdentifier": "com.willy43.wepspace"
+    }
+  }
+}
