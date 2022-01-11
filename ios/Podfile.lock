@@ -528,7 +528,7 @@ SPEC CHECKSUMS:
   EXUpdates: 061b67c33f0e7f8fd335bbb48697c4a4fc8a5157
   EXUpdatesInterface: e1c01b4f5ec76bd1d6cc714938f9edf5ef6379b9
   FBLazyVector: c71c5917ec0ad2de41d5d06a5855f6d5eda06971
-  FBReactNativeSpec: 650dd7e38f651c7b22b24b8e506355bcd88d734d
+  FBReactNativeSpec: 9054961d6c6ffd461388cedd8c4fbcdc7abd9d3e
   glog: 73c2498ac6884b13ede40eda8228cb1eee9d9d62
   Mapbox-iOS-SDK: a5915700ec84bc1a7f8b3e746d474789e35b7956
   MapboxMobileEvents: 2bc0ca2eedb627b73cf403258dce2b2fa98074a6
