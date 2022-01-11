@@ -4,8 +4,6 @@ import MapboxGL from '@react-native-mapbox-gl/maps';
 import { Icon } from 'react-native-elements';
 import { useNavigation } from '@react-navigation/native';
 
-import IssInfo from './iss'
-
 MapboxGL.setAccessToken('pk.eyJ1Ijoid2lsbHl4NDMiLCJhIjoiY2t3emphMnhiMHl2ODJ1cDhpcmd4czUwZyJ9.ZTboPDW4wAI5W5AWv4WhTA');
 
 const styles = StyleSheet.create({
@@ -107,7 +105,7 @@ export default function MapScreen() {
           name='info'
           type='font-awesome'
           color='#f50'
-          onPress={() => navigation.navigate("issinfo")} />
+          onPress={() => navigation.navigate("IssInfo")} />
         </View>
       </View>
     </View>
