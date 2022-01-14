@@ -100,12 +100,12 @@ export default function MapScreen() {
             
         </MapboxGL.MapView>
         <View style={styles.button}>
-        <Icon
-          raised
-          name='info'
-          type='font-awesome'
-          color='#f50'
-          onPress={() => navigation.navigate("IssInfo")} />
+          <Icon
+            raised
+            name='info'
+            type='font-awesome'
+            color='#f50'
+            onPress={() => navigation.navigate("IssInfo")} />
         </View>
       </View>
     </View>
