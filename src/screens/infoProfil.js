@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  Image,
   StyleSheet,
   Text,
   View,
@@ -9,12 +10,19 @@ import { Icon } from 'react-native-elements';
 
 const styles = StyleSheet.create({
   button: {
-      backgroundColor:"transparent",
-      position:'absolute',
-      top:"5%",
-      right:"1%",
-      zIndex:10
-    },
+    backgroundColor:"transparent",
+    position:'absolute',
+    top:"5%",
+    right:"1%",
+    zIndex:10
+  },
+  // userAvatar: {
+  //   marginTop: -300,
+  // },
+  logoAvatar: {
+    width: 300,
+    height: 300,
+  },
 });
 
 export default function InfoProfil() {
@@ -31,7 +39,16 @@ export default function InfoProfil() {
           size={20}
           onPress={() => navigation.navigate('Map')} />
       </View>
-      <Text>Profil</Text>
+      <View style={styles.userAvatar}>
+        <Image
+          style={styles.logoAvatar}
+          source={require('../assets/user-avatar.png')}
+        />
+        <Text>Pseudo :</Text>
+        <Text>Nom :</Text>
+        <Text>Prénom :</Text>
+        <Text>Email :</Text>
+      </View>
     </View>
   );
 }
