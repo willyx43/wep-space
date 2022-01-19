@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
   button: {
       backgroundColor:"transparent",
       position:'absolute',
-      top:"3%",
+      top:"5%",
       left:"1%",
       zIndex:10
     },
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
   }
 });
 
-export default function IssIno() {
+export default function IssInfo() {
   const [refreshing, setRefreshing] = React.useState(false);
   const [moon, setMoon] = React.useState(0);
   const [data, setData] = React.useState(0);
@@ -56,7 +56,7 @@ export default function IssIno() {
 
           const iss = await fetch('https://api.wheretheiss.at/v1/satellites/25544');
           const result = await iss.json();
-          console.log(result);
+          // console.log(result);
           setData(result);
 
       }

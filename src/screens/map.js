@@ -20,12 +20,20 @@ const styles = StyleSheet.create({
   map: {
     flex: 1
   },
-  button: {
+  buttonISS: {
     width:30,
     backgroundColor:"transparent",
     position:'absolute',
     top:"80%",
     left:"62%",
+    zIndex:10
+  },
+  buttonProfil: {
+    width:30,
+    backgroundColor:"transparent",
+    position:'absolute',
+    top:"80%",
+    left:"32%",
     zIndex:10
   }
 });
@@ -99,13 +107,21 @@ export default function MapScreen() {
             }}/> */}
             
         </MapboxGL.MapView>
-        <View style={styles.button}>
+        <View style={styles.buttonISS}>
           <Icon
             raised
             name='info'
             type='font-awesome'
             color='#f50'
             onPress={() => navigation.navigate("IssInfo")} />
+        </View>
+        <View style={styles.buttonProfil}>
+          <Icon
+            raised
+            name='cog'
+            type='font-awesome'
+            color='#f50'
+            onPress={() => navigation.navigate("InfoProfil")} />
         </View>
       </View>
     </View>
