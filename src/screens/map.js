@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
+import React, { useState, useEffect, Component } from 'react';
+import { StyleSheet, View } from 'react-native';
 import MapboxGL from '@react-native-mapbox-gl/maps';
+import { Icon } from 'react-native-elements';
+import { useNavigation } from '@react-navigation/native';
 
 MapboxGL.setAccessToken('pk.eyJ1Ijoid2lsbHl4NDMiLCJhIjoiY2t3emphMnhiMHl2ODJ1cDhpcmd4czUwZyJ9.ZTboPDW4wAI5W5AWv4WhTA');
 
@@ -17,14 +19,21 @@ const styles = StyleSheet.create({
   },
   map: {
     flex: 1
+  },
+  button: {
+    width:30,
+    backgroundColor:"transparent",
+    position:'absolute',
+    top:"80%",
+    left:"62%",
+    zIndex:10
   }
 });
-
-
 
 export default function MapScreen() {
   const [latitude, setLatitude] = React.useState(0);
   const [longitude, setLongitude] = React.useState(0);
+  const navigation = useNavigation();
 
   async function fetchFunction() {
     try{
@@ -88,7 +97,16 @@ export default function MapScreen() {
             width: 25,
             height: 25
             }}/> */}
+            
         </MapboxGL.MapView>
+        <View style={styles.button}>
+          <Icon
+            raised
+            name='info'
+            type='font-awesome'
+            color='#f50'
+            onPress={() => navigation.navigate("IssInfo")} />
+        </View>
       </View>
     </View>
   );
