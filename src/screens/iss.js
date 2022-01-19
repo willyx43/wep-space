@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
       alignItems: 'center'
   },
   name: {
-      fontSize: 20
+      fontSize: 15
   },
   flatList: {
       marginTop: 20,
@@ -36,13 +36,15 @@ const styles = StyleSheet.create({
       zIndex:10
     },
   footerList: {
-    marginTop: 20
+    marginTop: 20,
+    alignItems: 'center',
   }
 });
 
 export default function IssIno() {
   const [refreshing, setRefreshing] = React.useState(false);
   const [moon, setMoon] = React.useState(0);
+  const [data, setData] = React.useState(0);
   const navigation = useNavigation();
 
   // React.useEffect(() => {
@@ -50,8 +52,13 @@ export default function IssIno() {
       try {
           const response = await fetch('http://api.open-notify.org/astros.json');
           const json = await response.json();
-          // console.log(json);
           setMoon(json.people);
+
+          const iss = await fetch('https://api.wheretheiss.at/v1/satellites/25544');
+          const result = await iss.json();
+          console.log(result);
+          setData(result);
+
       }
       catch(err) {
               throw err;
@@ -98,15 +105,16 @@ export default function IssIno() {
                 >
                 </Image>
                 </View>
-                <Text style={{fontSize: 20}} >Personne dans l'ISS actuellement :</Text>
+                <View style={styles.footerList}>
+                    <Text style={{fontSize: 15}} >L'ISS a actuellement une vitesse de {data.velocity} km/h</Text>
+                    <Text style={{fontSize: 15}} >Il y a une distance de 408 km entre la Terre et l'ISS</Text>
+                  <Text style={{fontSize: 20}} >Personne dans l'ISS actuellement :</Text>
+                </View>
               </>
             }
             ListFooterComponent={
               <>
-                <View style={styles.footerList}>
-                    <Text style={{fontSize: 15}} >L'ISS a une vitesse de 28,000 km/h</Text>
-                    <Text style={{fontSize: 15}} >Il y a une distance de 408 km entre la Terre et l'ISS</Text>
-                </View>
+                
                 <View style={{alignItems: 'center'}}>
                   <Text style={{fontSize: 30}} >Missions :</Text>
                 </View>
