@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function allSeasons() {
+export default function AllSeasons() {
 
   const [refreshing, setRefreshing] = React.useState(false);
   const navigation = useNavigation();

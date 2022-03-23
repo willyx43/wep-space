@@ -30,7 +30,7 @@ export default function EarthScreen() {
 
   // React.useEffect(() => {
     async function fetchFunction() {
-      try{
+      try {
       const response = await fetch('https://api.le-systeme-solaire.net/rest/bodies/terre');
       const json = await response.json();
       setEarth(json);

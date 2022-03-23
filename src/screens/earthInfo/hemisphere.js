@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function hemisphere() {
+export default function Hemisphere() {
 
   const [refreshing, setRefreshing] = React.useState(false);
   const navigation = useNavigation();

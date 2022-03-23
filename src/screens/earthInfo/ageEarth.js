@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function ageEarth() {
+export default function AgeEarth() {
 
   const [refreshing, setRefreshing] = React.useState(false);
   const navigation = useNavigation();

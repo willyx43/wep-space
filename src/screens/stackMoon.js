@@ -10,7 +10,7 @@ import FourthApollo from "./apollo/apolloFourth";
 
 const Stack = createStackNavigator();
 
-export default function stackMoon() {
+export default function StackMoon() {
     return (
       <Stack.Navigator screenOptions={{headerShown: false}} >
         <Stack.Screen name="Moon" component={MoonScreen} />

@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function uvTypes() {
+export default function UvTypes() {
 
   const [refreshing, setRefreshing] = React.useState(false);
   const navigation = useNavigation();

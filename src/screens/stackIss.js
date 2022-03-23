@@ -8,7 +8,7 @@ import InfoProfil from "./infoProfil";
 
 const Stack = createStackNavigator();
 
-export default function stackIss() {
+export default function StackIss() {
     return (
       <Stack.Navigator screenOptions={{headerShown: false}} >
         <Stack.Screen name="Map" component={MapScreen} />

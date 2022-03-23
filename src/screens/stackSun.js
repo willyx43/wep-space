@@ -3,19 +3,19 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 
 import SunScreen from "./sun";
-import humanLife from "./sunInfo/humanLife";
-import spectreSun from "./sunInfo/spectreSun";
-import uvTypes from "./sunInfo/uvTypes";
+import HumanLife from "./sunInfo/humanLife";
+import SpectreSun from "./sunInfo/spectreSun";
+import UvTypes from "./sunInfo/uvTypes";
 
 const Stack = createStackNavigator();
 
-export default function stackSun() {
+export default function StackSun() {
     return (
       <Stack.Navigator screenOptions={{headerShown: false}} >
         <Stack.Screen name="Sun" component={SunScreen} />
-        <Stack.Screen name="humanLife" component={humanLife} />
-        <Stack.Screen name="uvTypes" component={uvTypes} />
-        <Stack.Screen name="spectreSun" component={spectreSun} />
+        <Stack.Screen name="humanLife" component={HumanLife} />
+        <Stack.Screen name="uvTypes" component={UvTypes} />
+        <Stack.Screen name="spectreSun" component={SpectreSun} />
       </Stack.Navigator>
     );
 }

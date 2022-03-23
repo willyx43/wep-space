@@ -47,7 +47,7 @@ export default function IssInfo() {
   const [data, setData] = React.useState(0);
   const navigation = useNavigation();
 
-  // React.useEffect(() => {
+  React.useEffect(() => {
       async function fetchFunction() {
       try {
           const response = await fetch('http://api.open-notify.org/astros.json');
@@ -64,8 +64,8 @@ export default function IssInfo() {
               throw err;
           }
       }
-      // fetchFunction();
-  // }, []);
+      fetchFunction();
+  }, []);
 
 
   const Item = ({ name, craft }) => (
@@ -175,7 +175,7 @@ export default function IssInfo() {
             refreshControl={
               <RefreshControl
               refreshing={refreshing}
-              onRefresh={() => fetchFunction()}
+              onRefresh={() => console.log("fetch function")}
               />
             }
             data={moon}

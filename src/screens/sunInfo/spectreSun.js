@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function spectreSun() {
+export default function SpectreSun() {
 
   const [refreshing, setRefreshing] = React.useState(false);
   const navigation = useNavigation();

@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function humanLife() {
+export default function HumanLife() {
 
   const [refreshing, setRefreshing] = React.useState(false);
   const navigation = useNavigation();

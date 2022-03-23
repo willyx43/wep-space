@@ -55,31 +55,23 @@ export default function MapScreen() {
       throw err;
     }
   }
-
-  // useEffect(() => {
-   
-  //     fetch('https://api.wheretheiss.at/v1/satellites/25544')
-  //     .then(results => results.json())
-  //     .then(data => {
-  //       setLatitude(data.latitude);
-  //       setLongitude(data.longitude)
-  //       // console.log(data.latitude);
-  //       // console.log(data.longitude);
-  //       console.log(latitude)
-  //       // setLatitude(iss.latitude);
-  //       // setLongitude(iss.longitude);
-  //     });
-  //     // console.log('Logs every minute');
+  useEffect(() => {
+    fetchFunction();
+  }, []);
 
   
-   
+  useEffect(() => {
+    const interval = setInterval(() => {
+      console.log('This will be called every 2 seconds');
+      fetchFunction();
+    }, 2000);
+  
+    return () => clearInterval(interval);
+  }, []);
 
-
-  // }, []);
-
-  // const [coordinates] = useState([longitude, latitude]);
-  // console.log(coordinates)
-
+  useEffect(() => {
+    fetchFunction();
+  }, []);
 
   return (
     <View style={styles.page}>
