@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
   button: {
       backgroundColor:"transparent",
       position:'absolute',
-      top:"3%",
+      top:"5%",
       left:"1%",
       zIndex:10
     },
@@ -41,13 +41,13 @@ const styles = StyleSheet.create({
   }
 });
 
-export default function IssIno() {
+export default function IssInfo() {
   const [refreshing, setRefreshing] = React.useState(false);
   const [moon, setMoon] = React.useState(0);
   const [data, setData] = React.useState(0);
   const navigation = useNavigation();
 
-  // React.useEffect(() => {
+  React.useEffect(() => {
       async function fetchFunction() {
       try {
           const response = await fetch('http://api.open-notify.org/astros.json');
@@ -56,7 +56,7 @@ export default function IssIno() {
 
           const iss = await fetch('https://api.wheretheiss.at/v1/satellites/25544');
           const result = await iss.json();
-          console.log(result);
+          // console.log(result);
           setData(result);
 
       }
@@ -64,8 +64,8 @@ export default function IssIno() {
               throw err;
           }
       }
-      // fetchFunction();
-  // }, []);
+      fetchFunction();
+  }, []);
 
 
   const Item = ({ name, craft }) => (
@@ -175,7 +175,7 @@ export default function IssIno() {
             refreshControl={
               <RefreshControl
               refreshing={refreshing}
-              onRefresh={() => fetchFunction()}
+              onRefresh={() => console.log("fetch function")}
               />
             }
             data={moon}

@@ -20,12 +20,20 @@ const styles = StyleSheet.create({
   map: {
     flex: 1
   },
-  button: {
+  buttonISS: {
     width:30,
     backgroundColor:"transparent",
     position:'absolute',
     top:"80%",
     left:"62%",
+    zIndex:10
+  },
+  buttonProfil: {
+    width:30,
+    backgroundColor:"transparent",
+    position:'absolute',
+    top:"80%",
+    left:"32%",
     zIndex:10
   }
 });
@@ -47,31 +55,23 @@ export default function MapScreen() {
       throw err;
     }
   }
-
-  // useEffect(() => {
-   
-  //     fetch('https://api.wheretheiss.at/v1/satellites/25544')
-  //     .then(results => results.json())
-  //     .then(data => {
-  //       setLatitude(data.latitude);
-  //       setLongitude(data.longitude)
-  //       // console.log(data.latitude);
-  //       // console.log(data.longitude);
-  //       console.log(latitude)
-  //       // setLatitude(iss.latitude);
-  //       // setLongitude(iss.longitude);
-  //     });
-  //     // console.log('Logs every minute');
+  useEffect(() => {
+    fetchFunction();
+  }, []);
 
   
-   
+  useEffect(() => {
+    const interval = setInterval(() => {
+      console.log('This will be called every 2 seconds');
+      fetchFunction();
+    }, 2000);
+  
+    return () => clearInterval(interval);
+  }, []);
 
-
-  // }, []);
-
-  // const [coordinates] = useState([longitude, latitude]);
-  // console.log(coordinates)
-
+  useEffect(() => {
+    fetchFunction();
+  }, []);
 
   return (
     <View style={styles.page}>
@@ -99,13 +99,21 @@ export default function MapScreen() {
             }}/> */}
             
         </MapboxGL.MapView>
-        <View style={styles.button}>
+        <View style={styles.buttonISS}>
           <Icon
             raised
             name='info'
             type='font-awesome'
             color='#f50'
             onPress={() => navigation.navigate("IssInfo")} />
+        </View>
+        <View style={styles.buttonProfil}>
+          <Icon
+            raised
+            name='cog'
+            type='font-awesome'
+            color='#f50'
+            onPress={() => navigation.navigate("InfoProfil")} />
         </View>
       </View>
     </View>
