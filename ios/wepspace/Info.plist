@@ -58,6 +58,12 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>WEP SPACE would like to upload photos from your photo gallery</string>
+	<key>NSCameraUsageDescription</key>
+	<string>WEP SPACE requires to access camera for uploading photos to your profile or posts</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>WEP SPACE requires to access Audio recording to record and uplod videos</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Location is required to run the app</string>
 	<key>UILaunchStoryboardName</key>

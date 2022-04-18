@@ -9,13 +9,13 @@ import UvTypes from "./sunInfo/uvTypes";
 
 const Stack = createStackNavigator();
 
-export default function StackSun() {
+export default function StackMars() {
   return (
     <Stack.Navigator screenOptions={{headerShown: false}} >
-      <Stack.Screen name="Sun" component={SunScreen} />
-      <Stack.Screen name="humanLife" component={HumanLife} />
+      <Stack.Screen name="Mars" component={SaturneMars} />
+      {/* <Stack.Screen name="humanLife" component={HumanLife} />
       <Stack.Screen name="uvTypes" component={UvTypes} />
-      <Stack.Screen name="spectreSun" component={SpectreSun} />
+      <Stack.Screen name="spectreSun" component={SpectreSun} /> */}
     </Stack.Navigator>
   );
 }

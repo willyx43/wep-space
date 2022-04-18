@@ -70,7 +70,7 @@ export default function InfoProfil() {
 
   const [loading, setLoading] = useState(true);
   const [userData, setUserData] = useState(null);
-  console.log(user)
+  // console.log(user)
 
   const getUser = async() => {
     await firestore()
@@ -79,7 +79,7 @@ export default function InfoProfil() {
     .get()
     .then((documentSnapshot) => {
       if( documentSnapshot.exists ) {
-        console.log('User Data', documentSnapshot.data());
+        // console.log('User Data', documentSnapshot.data());
         setUserData(documentSnapshot.data());
       }
     })
@@ -103,17 +103,24 @@ export default function InfoProfil() {
           onPress={() => navigation.navigate('Map')} />
       </View>
 
+        <TouchableOpacity
+          style={styles.userBtn}
+          onPress={() => {
+            navigation.navigate('EditProfil');
+          }}>
+          <Text style={styles.userBtnTxt}>Edit</Text>
+        </TouchableOpacity>
         <Text style={styles.userName}>{user.displayName}</Text>
         <Text style={styles.aboutUser}>
         Email : {user.email}
         </Text>
         <Image
           style={styles.userImg}
-          source={{uri: user.photoURL ? userData : 'https://avatarfiles.alphacoders.com/160/thumb-160241.jpg'}}
+          source={{uri: userData ? userData.userImg : 'https://avatarfiles.alphacoders.com/160/thumb-160241.jpg'}}
         />
         <Text style={styles.aboutUser}>
         Date de création : {user.creationTime ? userData.createdAt.toDate().toDateString() || 'No details added.' : user.metadata.creationTime}
-        {console.log(user.metadata.creationTime)}
+        {/* {console.log(user.photoURL)} */}
         </Text>
         <View style={styles.userBtnWrapper}>
           <TouchableOpacity style={styles.userBtn} onPress={() => logout()}>
